@@ -1,15 +1,10 @@
-import {ApolloServer, gql} from "apollo-server"
-
-const typeDefs = gql`
-  type Query {
-    helloWorld: String!
-  }
-  # type Mutation {}
-`
+import {ApolloServer} from "apollo-server"
+import { typeDefs } from "./schema"
+import { resolvers } from "./resolvers"
 
 const server = new ApolloServer({
     typeDefs,
-    //resolvers
+    resolvers
 })
 
 try {
